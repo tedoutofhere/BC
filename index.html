@@ -31,7 +31,6 @@
     overflow: hidden;
   }
 
-  /* Grain overlay */
   body::before {
     content: '';
     position: fixed;
@@ -42,7 +41,6 @@
     opacity: 0.6;
   }
 
-  /* Ambient light leak */
   body::after {
     content: '';
     position: fixed;
@@ -57,11 +55,11 @@
 
   .card {
     position: relative;
-    width: min(420px, 94vw);
+    width: min(480px, 96vw);
     background: var(--deep);
     border: 1px solid var(--border);
     border-radius: 2px;
-    padding: 48px 44px 40px;
+    padding: 56px 52px 48px;
     z-index: 1;
     opacity: 0;
     transform: translateY(24px);
@@ -72,41 +70,39 @@
       inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
-  /* Top gold accent line */
   .card::before {
     content: '';
     position: absolute;
-    top: 0; left: 44px; right: 44px;
+    top: 0; left: 52px; right: 52px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     opacity: 0.7;
   }
 
-  /* Corner marks */
   .corner {
     position: absolute;
-    width: 12px; height: 12px;
+    width: 14px; height: 14px;
     border-color: var(--gold-dim);
     border-style: solid;
   }
-  .corner.tl { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
-  .corner.tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
-  .corner.bl { bottom: 10px; left: 10px; border-width: 0 0 1px 1px; }
-  .corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+  .corner.tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
+  .corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
+  .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
+  .corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
 
   .eyebrow {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
     opacity: 0;
     animation: fadeUp 0.8s ease 0.5s forwards;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   .name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(38px, 9vw, 52px);
+    font-size: clamp(46px, 11vw, 62px);
     font-weight: 300;
     line-height: 1;
     letter-spacing: -0.01em;
@@ -122,11 +118,9 @@
 
   .tagline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
     font-style: italic;
     font-weight: 300;
-    color: var(--muted);
-    margin-top: 10px;
+    margin-top: 14px;
     letter-spacing: 0.04em;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.75s forwards;
@@ -134,19 +128,39 @@
 
   .tagline p {
     margin: 0;
-    color: var(--muted);
+    line-height: 1.7;
   }
 
-  .tagline p:first-child {
-    color: var(--white);
-    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  .tagline .headline {
+    color: #ffffff;
+    font-size: 17px;
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.9),
+      0 0 16px rgba(255, 255, 255, 0.6),
+      0 0 28px rgba(255, 255, 255, 0.35);
+  }
+
+  .tagline .location {
+    color: #e8c98a;
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  .tagline .sub {
+    color: #ffffff;
+    font-size: 15px;
+    margin-top: 2px;
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.9),
+      0 0 16px rgba(255, 255, 255, 0.6),
+      0 0 28px rgba(255, 255, 255, 0.35);
   }
 
   .divider {
-    width: 40px;
+    width: 44px;
     height: 1px;
     background: linear-gradient(90deg, var(--gold), transparent);
-    margin: 28px 0;
+    margin: 30px 0;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.85s forwards;
   }
@@ -154,7 +168,7 @@
   .contacts {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.95s forwards;
   }
@@ -162,10 +176,10 @@
   .contact-item {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     text-decoration: none;
     color: var(--white);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
     letter-spacing: 0.03em;
     transition: color 0.2s ease;
@@ -175,7 +189,7 @@
   .contact-item:hover .icon-wrap { border-color: var(--gold-dim); }
 
   .icon-wrap {
-    width: 32px; height: 32px;
+    width: 36px; height: 36px;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 2px;
     display: flex; align-items: center; justify-content: center;
@@ -184,14 +198,14 @@
   }
 
   .icon-wrap svg {
-    width: 14px; height: 14px;
+    width: 16px; height: 16px;
     fill: var(--gold);
     opacity: 0.85;
   }
 
   .footer {
-    margin-top: 32px;
-    padding-top: 20px;
+    margin-top: 36px;
+    padding-top: 22px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
@@ -202,20 +216,20 @@
 
   .footer-brand {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(200,169,110,0.5);
   }
 
   .save-btn {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
     background: none;
     border: 1px solid var(--gold-dim);
-    padding: 6px 14px;
+    padding: 7px 16px;
     cursor: pointer;
     border-radius: 1px;
     font-family: 'Archivo', sans-serif;
@@ -243,10 +257,11 @@
   <div class="eyebrow">Photography</div>
 
   <div class="name">Paul<br><em>Verhoef</em></div>
+
   <div class="tagline">
-    <p>Every frame, a moment worth remembering.</p>
-    <p>Gold Coast Australia</p>
-    <p>No job too big no job too small</p>
+    <p class="headline">Every frame, a moment worth remembering.</p>
+    <p class="location">Gold Coast, Australia</p>
+    <p class="sub">No job too big, no job too small.</p>
   </div>
 
   <div class="divider"></div>
