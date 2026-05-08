@@ -132,6 +132,16 @@
     animation: fadeUp 0.8s ease 0.75s forwards;
   }
 
+  .tagline p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .tagline p:first-child {
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  }
+
   .divider {
     width: 40px;
     height: 1px;
@@ -233,7 +243,11 @@
   <div class="eyebrow">Photography</div>
 
   <div class="name">Paul<br><em>Verhoef</em></div>
-  <div class="tagline">Every frame, a moment worth remembering.</div>
+  <div class="tagline">
+    <p>Every frame, a moment worth remembering.</p>
+    <p>Gold Coast Australia</p>
+    <p>No job too big no job too small</p>
+  </div>
 
   <div class="divider"></div>
 
@@ -275,7 +289,7 @@ ORG:PV Films
 TEL:0416571969
 EMAIL:pvfilms1@icloud.com
 URL:https://instagram.com/pvfilms1
-NOTE:Every frame, a moment worth remembering.
+NOTE:Every frame, a moment worth remembering. Gold Coast Australia. No job too big no job too small.
 END:VCARD`;
 
   const blob = new Blob([vcard], { type: 'text/vcard' });
